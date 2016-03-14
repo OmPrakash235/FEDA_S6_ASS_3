@@ -1,0 +1,22 @@
+<!--Append a <p> element with a text message when an <input> field is changed-->
+
+<html>
+	<head>
+		<title>jQuery &amp; Ajax</title>
+	</head>
+	<body>
+		<form name='demo_form'>
+			First name: <input type="text" name="first_name"><br>
+			Last name: <input type="text" name="last_name"><br>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input[type="text"]').on('change', function(){
+				$('form').append('<p>'+ $(this).attr('name') + ': ' + $(this).val() + '</p>');
+			});
+		})
+	</script>
+</html>
